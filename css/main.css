@@ -9,14 +9,85 @@ html {
   font-size: 62.5%;
 }
 
+/*Nav's section styles*/
 nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
   background-color: #FFEFE7;
   width: 100%;
+  min-width: 380px;
   height: 100px;
 }
 
+.navbar p {
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 2rem;
+  color: #7C6A0A;
+}
+
+.navbar--buttons {
+  display: inline-flex;
+  list-style: none;
+  gap: 40px;
+}
+
+.navbar--buttons li .profile svg {
+  background-image: url("../assets/icon/user-circle.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 25px;
+  width: 25px;
+}
+
+.navbar--buttons li .wishlist svg {
+  background-image: url("../assets/icon/heart.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 25px;
+  width: 25px;
+}
+
+.navbar--buttons li .cart svg {
+  background-image: url("../assets/icon/shopping-cart.svg");
+  background-repeat: no-repeat;
+  background-size: 10px 10px;
+  background-position: center;
+  background-size: contain;
+  height: 25px;
+  width: 25px;
+}
+
+/*Main's section styles*/
 main {
   background-color: #FFEFE7;
+  width: 100%;
+  height: auto;
+}
+
+/*Article*/
+article {
+  width: 90%;
+  margin: 0 auto;
+  gap: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.impact-section h1 {
+  font-size: 2rem;
+  line-height: 2.8rem;
+  font-weight: bold;
+  color: #7C6A0A;
+}
+
+.image-section {
+  width: 200px;
 }
 
 footer {
