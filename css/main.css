@@ -9,89 +9,151 @@ html {
   font-size: 62.5%;
 }
 
+body {
+  background-color: #FFEFE7;
+}
+
 /*Nav's section styles*/
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 30px;
-  background-color: #FFEFE7;
   width: 100%;
-  min-width: 380px;
+  min-width: 320px;
   height: 100px;
-}
-
-.navbar p {
-  font-size: 1.8rem;
-  font-weight: 400;
-  line-height: 2rem;
+  padding: 0 30px;
   color: #7C6A0A;
 }
-
-.navbar--buttons {
-  display: inline-flex;
+nav p {
+  font-size: 2.4rem;
+}
+nav .icons {
+  display: flex;
   list-style: none;
-  gap: 40px;
+  gap: 15px;
+}
+@media screen and (min-width: 600px) {
+  nav .icons .icon {
+    display: flex;
+  }
+}
+@media screen and (max-width: 600px) {
+  nav .icons .icon {
+    display: none;
+  }
+}
+@media screen and (min-width: 600px) {
+  nav .icons .menu {
+    display: none;
+  }
+}
+@media screen and (max-width: 600px) {
+  nav .icons .menu {
+    display: flex;
+  }
 }
 
-.navbar--buttons li .profile svg {
-  background-image: url("../assets/icon/user-circle.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  height: 25px;
-  width: 25px;
-}
-
-.navbar--buttons li .wishlist svg {
-  background-image: url("../assets/icon/heart.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  height: 25px;
-  width: 25px;
-}
-
-.navbar--buttons li .cart svg {
-  background-image: url("../assets/icon/shopping-cart.svg");
-  background-repeat: no-repeat;
-  background-size: 10px 10px;
-  background-position: center;
-  background-size: contain;
-  height: 25px;
-  width: 25px;
-}
-
-/*Main's section styles*/
-main {
-  background-color: #FFEFE7;
+/*Main section styles*/
+.main-section {
   width: 100%;
   height: auto;
 }
-
-/*Article*/
-article {
-  width: 90%;
-  margin: 0 auto;
-  gap: 80px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+@media screen and (max-width: 600px) {
+  .main-section article {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 320px;
+    height: auto;
+    margin-bottom: 30px;
+  }
+  .main-section article .impact-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    order: 1;
+    width: 90%;
+    margin: 0 auto;
+  }
+  .main-section article .impact-section h1 {
+    color: #7C6A0A;
+    font-size: 2.4rem;
+    line-height: 3.6rem;
+    font-weight: bold;
+  }
+  .main-section article .impact-section p {
+    color: #7C6A0A;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+  }
+  .main-section article .impact-section button {
+    align-self: center;
+    padding: 10px 40px;
+    background-color: #FA9500;
+    color: #fff;
+    outline: none;
+    border: none;
+    border-radius: 25px;
+  }
+  .main-section article .image-section {
+    align-self: center;
+  }
+  .main-section article .image-section img {
+    width: 336px;
+    height: 360px;
+  }
 }
-
-.impact-section h1 {
-  font-size: 2rem;
-  line-height: 2.8rem;
-  font-weight: bold;
-  color: #7C6A0A;
-}
-
-.image-section {
-  width: 200px;
-}
-
-footer {
-  background-color: #fa9500;
-  width: 100%;
-  height: 250px;
+@media screen and (min-width: 600px) {
+  .main-section article {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    min-width: 600px;
+    height: auto;
+    padding: 45px;
+    margin-bottom: 30px;
+    gap: 50px;
+  }
+  .main-section article .impact-section {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    width: 50%;
+    min-width: 270px;
+    margin: 0 auto;
+  }
+  .main-section article .impact-section h1 {
+    color: #7C6A0A;
+    font-size: 4rem;
+    line-height: 3.6rem;
+    font-weight: bold;
+  }
+  .main-section article .impact-section p {
+    color: #7C6A0A;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    font-weight: 400;
+  }
+  .main-section article .impact-section button {
+    align-self: flex-start;
+    padding: 10px 40px;
+    background-color: #FA9500;
+    color: #fff;
+    outline: none;
+    border: none;
+    border-radius: 25px;
+    margin-top: 60px;
+  }
+  .main-section article .image-section {
+    display: inline-flex;
+    justify-content: flex-end;
+    width: 50%;
+  }
+  .main-section article .image-section img {
+    width: 90%;
+    min-width: 270px;
+    max-width: 430px;
+    height: auto;
+  }
 }/*# sourceMappingURL=main.css.map */
