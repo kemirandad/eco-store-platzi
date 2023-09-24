@@ -1,8 +1,8 @@
 $primary-color: #FFEFE7;
-$secondary-color:#FFDAC6;
-$tertiary-color:#BABD8D;
-$primary-text-color:#7C6A0A;
-$font-stack: 'IBM Plex Sans' , sans-serif; 
+$secondary-color: #FFDAC6;
+$tertiary-color: #BABD8D;
+$primary-text-color: #7C6A0A;
+$font-stack: 'IBM Plex Sans', sans-serif;
 $layout-breakpoint-small: 375px;
 $layout-breakpoint-medium: 600px;
 
@@ -12,15 +12,18 @@ $layout-breakpoint-medium: 600px;
     padding: 0;
     box-sizing: border-box;
 }
-html{
+
+html {
     font-family: $font-stack;
     font-size: 62.5%;
 }
-body{
+
+body {
     background-color: $primary-color;
 }
+
 /*Nav's section styles*/
-nav{
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -29,26 +32,31 @@ nav{
     height: 100px;
     padding: 0 30px;
     color: $primary-text-color;
-    
-    p{
+
+    p {
         font-size: 2.4rem;
     }
-    .icons{
+
+    .icons {
         display: flex;
         list-style: none;
         gap: 15px;
-        .icon{
+
+        .icon {
             @media screen and (min-width: $layout-breakpoint-medium) {
                 display: flex;
             }
+
             @media screen and (max-width: $layout-breakpoint-medium) {
                 display: none;
             }
         }
-        .menu{
+
+        .menu {
             @media screen and (min-width: $layout-breakpoint-medium) {
                 display: none;
             }
+
             @media screen and (max-width: $layout-breakpoint-medium) {
                 display: flex;
             }
@@ -57,19 +65,20 @@ nav{
 }
 
 /*Main section styles*/
-.main-section{
+.main-section {
     width: 100%;
     height: auto;
+
     /*Movile screen*/
     @media screen and (max-width: $layout-breakpoint-medium) {
-        article{
+        article {
             display: flex;
             flex-direction: column;
             width: 100%;
             min-width: 320px;
             height: auto;
-    
-            .impact-section{
+
+            .impact-section {
                 display: flex;
                 flex-direction: column;
                 gap: 15px;
@@ -77,20 +86,22 @@ nav{
                 width: 90%;
                 min-width: 270px;
                 margin: 0 auto;
-                
-                h1{
+
+                h1 {
                     color: $primary-text-color;
                     font-size: 2.4rem;
                     line-height: 3.6rem;
                     font-weight: bold;
                 }
-                p{
+
+                p {
                     color: $primary-text-color;
                     font-size: 1.2rem;
                     line-height: 1.5rem;
                     font-weight: 400;
                 }
-                button{
+
+                button {
                     align-self: center;
                     padding: 10px 40px;
                     background-color: #FA9500;
@@ -100,47 +111,53 @@ nav{
                     border-radius: 25px;
                 }
             }
-            .image-section{
+
+            .image-section {
                 align-self: center;
-                img{
+
+                img {
                     width: 336px;
                     height: 360px;
                 }
             }
         }
     }
+
     /*Desktop screen*/
     @media screen and (min-width: $layout-breakpoint-medium) {
-        article{
+        article {
             display: flex;
             justify-content: space-evenly;
             width: 100%;
             min-width: 600px;
             height: auto;
             padding: 45px;
+            padding-bottom: 0;
             gap: 50px;
-    
-            .impact-section{
+
+            .impact-section {
                 display: flex;
                 flex-direction: column;
                 gap: 35px;
                 width: 50%;
                 min-width: 270px;
                 margin: 0 auto;
-                
-                h1{
+
+                h1 {
                     color: $primary-text-color;
                     font-size: 4rem;
                     line-height: 3.6rem;
                     font-weight: bold;
                 }
-                p{
+
+                p {
                     color: $primary-text-color;
                     font-size: 1.6rem;
                     line-height: 2rem;
                     font-weight: 400;
                 }
-                button{
+
+                button {
                     align-self: flex-start;
                     padding: 10px 40px;
                     background-color: #FA9500;
@@ -151,12 +168,14 @@ nav{
                     margin-top: 30px;
                 }
             }
-            .image-section{
+
+            .image-section {
                 display: inline-flex;
                 justify-content: flex-end;
                 width: 50%;
                 overflow: hidden;
-                img{
+
+                img {
                     width: 90%;
                     min-width: 270px;
                     max-width: 430px;
@@ -170,56 +189,78 @@ nav{
     }
 }
 
-section{
+section {
     width: 100%;
     height: auto;
     padding: 60px;
 
-    h2{
+    h2 {
         color: $primary-text-color;
         font-size: 2.4rem;
     }
 
-    .healthcare{
-        h2{
+    .healthcare {
+        padding-bottom: 60px;
+        h2 {
             font-weight: 300;
             padding-bottom: 60px;
         }
-        .product-card{
-            display: inline-flex;
-            flex-direction: column;
-            width: calc(100%/3 - 20px);
-            min-width: 250px;
-            max-width: 270px;
+
+        .card-section {
+            display: flex;
+            row-gap: 30px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: auto;
             height: auto;
-            background-color: $secondary-color;
-            color: $primary-text-color;
-            padding: 20px;
-            border-radius: 3px;
+            column-gap: 200px;
 
-            svg{
-                width: 20px;
-                height: 20px;
-                margin-bottom: 7px;
-                align-self: flex-end;
+            .product-card {
+                display: flex;
+                flex-direction: column;
+                width: calc(100%/3 - 20px);
+                min-width: 250px;
+                max-width: 270px;
+                height: auto;
+                background-color: $secondary-color;
+                color: $primary-text-color;
+                padding: 20px;
+                border-radius: 8px;
+
+                svg {
+                    width: 20px;
+                    height: 20px;
+                    margin-bottom: 7px;
+                    align-self: flex-end;
+                }
+
+                .product-image {
+                    width: 100%;
+                    height: 100%;
+                    align-content: center;
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                        margin: 0 auto;
+                        object-fit: cover;
+                        border-radius: 6px;
+                    }
+
+                    
+                }
+                h3 {
+                    font-size: 2rem;
+                    font-weight: 600;
+                }
+
+                p {
+                    font-size: 1.4rem;
+                    font-weight: 300;
+                }
             }
 
-            img{
-                width: 100%;
-                height: 250px;
-                margin: 0 auto;
-                object-fit: cover;
-                border-radius: 6px;
-            }
-
-            h3{
-                font-size: 2rem;
-                font-weight: 600;
-            }
-            p{
-                font-size: 1.1rem;
-                font-weight: 300;
-            }
         }
+
     }
 }
