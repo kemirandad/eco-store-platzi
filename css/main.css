@@ -16,6 +16,7 @@ body {
 /*Nav's section styles*/
 nav {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -64,6 +65,8 @@ nav .icons {
   .main-section article {
     display: flex;
     flex-direction: column;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     min-width: 320px;
     height: auto;
@@ -109,6 +112,7 @@ nav .icons {
 @media screen and (min-width: 600px) {
   .main-section article {
     display: flex;
+    flex-direction: row;
     justify-content: space-evenly;
     width: 100%;
     min-width: 600px;
@@ -120,6 +124,8 @@ nav .icons {
   .main-section article .impact-section {
     display: flex;
     flex-direction: column;
+    justify-content: none;
+    align-items: flex-start;
     gap: 35px;
     width: 50%;
     min-width: 270px;
@@ -253,4 +259,50 @@ section .furniture .card-section .product-card {
 }
 section .furniture .card-section .product-card svg path {
   stroke: #fff;
+}
+
+.about-us {
+  width: 100%;
+  min-width: 400px;
+  height: auto;
+  padding-bottom: 30px;
+}
+.about-us h2 {
+  font-weight: bold;
+  padding-bottom: 60px;
+}
+.about-us .mision-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+}
+.about-us .mision-section div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 600px) {
+  .about-us .mision-section div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.about-us .mision-section div img {
+  width: 100px;
+  height: 100px;
+}
+.about-us .mision-section div p {
+  font-weight: 300;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  color: #E86424;
+  text-align: center;
 }/*# sourceMappingURL=main.css.map */

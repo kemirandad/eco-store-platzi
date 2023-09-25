@@ -7,6 +7,19 @@ $layout-breakpoint-small: 375px;
 $layout-breakpoint-medium: 600px;
 $layout-breakpoint-tablet: 730px;
 
+@mixin flexCenter($direction, $content: null, $align: null) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $content;
+    align-items: $align;
+}
+
+@mixin buttonStyle {
+    button {
+        background: none;
+        border-style: none;
+    }
+}
 
 * {
     margin: 0;
@@ -25,9 +38,7 @@ body {
 
 /*Nav's section styles*/
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flexCenter(row, space-between, center);
     width: 100%;
     min-width: 320px;
     height: 100px;
@@ -73,6 +84,7 @@ nav {
     /*Movile screen*/
     @media screen and (max-width: $layout-breakpoint-medium) {
         article {
+            @include flexCenter(column);
             display: flex;
             flex-direction: column;
             width: 100%;
@@ -127,8 +139,7 @@ nav {
     /*Desktop screen*/
     @media screen and (min-width: $layout-breakpoint-medium) {
         article {
-            display: flex;
-            justify-content: space-evenly;
+            @include flexCenter(row, space-evenly);
             width: 100%;
             min-width: 600px;
             height: auto;
@@ -137,8 +148,7 @@ nav {
             gap: 50px;
 
             .impact-section {
-                display: flex;
-                flex-direction: column;
+                @include flexCenter(column, none, flex-start);
                 gap: 35px;
                 width: 50%;
                 min-width: 270px;
@@ -210,6 +220,7 @@ section {
         .card-section {
             display: flex;
             row-gap: 30px;
+
             @media screen and (max-width: $layout-breakpoint-tablet) {
                 flex-wrap: nowrap;
                 /*Horizontal scroll section start*/
@@ -219,6 +230,7 @@ section {
                 scroll-snap-type: x proximity;
                 /*Horizontal scroll section end*/
             }
+
             flex-wrap: wrap;
             justify-content: space-between;
             width: auto;
@@ -245,6 +257,7 @@ section {
                     height: 20px;
                     margin-bottom: 7px;
                     align-self: flex-end;
+
                     @media screen and (max-width: $layout-breakpoint-medium) {
                         display: none;
                     }
@@ -281,17 +294,60 @@ section {
 
     }
 
-    .furniture{
+    .furniture {
         @extend .healthcare;
-        .card-section{
-            .product-card{
+
+        .card-section {
+            .product-card {
                 background-color: $tertiary-color;
                 color: #fff;
 
-                svg path{
+                svg path {
                     stroke: #fff;
                 }
             }
         }
     }
+
 }
+
+.about-us {
+    width: 100%;
+    min-width: 400px;
+    height: auto;
+    padding-bottom: 30px;
+
+    h2 {
+        font-weight: bold;
+        padding-bottom: 60px;
+    }
+
+    .mision-section {
+        @include flexCenter(row, space-around, center);
+        width: 90%;
+        margin: 0 auto;
+        column-gap: 30px;
+        div {
+            @media screen and (max-width: $layout-breakpoint-medium) {
+                @include flexCenter(column, center, center);
+            }
+
+            @include flexCenter(row, center, center);
+
+            img {
+                width: 100px;
+                height: 100px;
+            }
+
+            p {
+                font-weight: 300;
+                font-size: 1.3rem;
+                line-height: 1.8rem;
+                color: #E86424;
+                text-align: center;
+            }
+        }
+    }
+}
+
+footer {}
