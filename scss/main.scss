@@ -2,6 +2,7 @@ $primary-color: #FFEFE7;
 $secondary-color: #FFDAC6;
 $tertiary-color: #BABD8D;
 $primary-text-color: #7C6A0A;
+$footer-color: #FA9500;
 $font-stack: 'IBM Plex Sans', sans-serif;
 $layout-breakpoint-small: 375px;
 $layout-breakpoint-medium: 600px;
@@ -84,6 +85,7 @@ nav {
     /*Movile screen*/
     @media screen and (max-width: $layout-breakpoint-medium) {
         article {
+            padding-bottom: 20px;
             @include flexCenter(column);
             display: flex;
             flex-direction: column;
@@ -109,9 +111,9 @@ nav {
 
                 p {
                     color: $primary-text-color;
-                    font-size: 1.2rem;
-                    line-height: 1.5rem;
-                    font-weight: 400;
+                    font-size: 1.3rem;
+                    line-height: 1.6rem;
+                    font-weight: 300;
                 }
 
                 button {
@@ -122,15 +124,21 @@ nav {
                     outline: none;
                     border: none;
                     border-radius: 25px;
+
+                    &:hover {
+                        transform: scale(1.1);
+                        transition: transform 0.3s ease;
+                    }
                 }
             }
 
             .image-section {
-                align-self: center;
+                text-align: center;
 
                 img {
-                    width: 336px;
-                    height: 360px;
+                    width: 90%;
+                    height: auto;
+                    margin: 0 auto;
                 }
             }
         }
@@ -177,6 +185,11 @@ nav {
                     border: none;
                     border-radius: 25px;
                     margin-top: 30px;
+
+                    &:hover {
+                        transform: scale(1.1);
+                        transition: transform 0.3s ease;
+                    }
                 }
             }
 
@@ -189,7 +202,6 @@ nav {
                 img {
                     width: 90%;
                     min-width: 270px;
-                    max-width: 430px;
                     height: auto;
                     object-fit: cover;
                 }
@@ -200,17 +212,19 @@ nav {
 
 section {
     width: 100%;
+    min-width: 320px;
     height: auto;
-    padding: 20px;
-    padding-bottom: 0;
+
 
     h2 {
+        width: 100%;
         color: $primary-text-color;
         font-size: 2.4rem;
+        padding: 20px 0 0 30px;
     }
 
     .healthcare {
-        padding-bottom: 60px;
+        padding-bottom: 40px;
 
         h2 {
             font-weight: 300;
@@ -229,6 +243,18 @@ section {
                 overscroll-behavior-x: contain;
                 scroll-snap-type: x proximity;
                 /*Horizontal scroll section end*/
+
+                .first-card {
+                    margin-left: 30px;
+                }
+
+                .last-card {
+                    margin-right: 30px;
+                }
+            }
+
+            @media screen and (min-width: $layout-breakpoint-tablet) {
+                margin: 0 45px;
             }
 
             flex-wrap: wrap;
@@ -244,8 +270,7 @@ section {
                 display: flex;
                 flex-direction: column;
                 width: calc(100%/3 - 100px);
-                min-width: 200px;
-                max-width: 370px;
+                min-width: 190px;
                 height: auto;
                 background-color: $secondary-color;
                 color: $primary-text-color;
@@ -313,26 +338,31 @@ section {
 
 .about-us {
     width: 100%;
-    min-width: 400px;
+    min-width: 320px;
     height: auto;
     padding-bottom: 30px;
 
     h2 {
-        font-weight: bold;
+        width: 100%;
+        font-weight: 500;
         padding-bottom: 60px;
     }
 
     .mision-section {
-        @include flexCenter(row, space-around, center);
-        width: 90%;
-        margin: 0 auto;
-        column-gap: 30px;
-        div {
-            @media screen and (max-width: $layout-breakpoint-medium) {
-                @include flexCenter(column, center, center);
-            }
+        @media screen and (max-width: $layout-breakpoint-medium) {
+            @include flexCenter(column, center, center);
+            width: 60%;
+        }
 
-            @include flexCenter(row, center, center);
+        @include flexCenter(row, space-evenly, center);
+        margin: 0 auto;
+        width: 80%;
+        column-gap: 30px;
+
+        .earth {
+            @include flexCenter(inherit, center, center);
+            width: 100%;
+            height: auto;
 
             img {
                 width: 100px;
@@ -342,12 +372,164 @@ section {
             p {
                 font-weight: 300;
                 font-size: 1.3rem;
-                line-height: 1.8rem;
                 color: #E86424;
                 text-align: center;
             }
         }
+
+        .innovation {
+            @extend .earth;
+        }
     }
 }
 
-footer {}
+.gallery {
+    width: 100%;
+    height: auto;
+    padding-bottom: 40px;
+
+    h2 {
+        font-weight: 500;
+        padding-bottom: 60px;
+    }
+
+    .carrusel {
+        width: 100%;
+        height: auto;
+        @include flexCenter(column, center, center);
+
+        @media screen and (min-width: $layout-breakpoint-tablet) {
+            @include flexCenter(row, space-evenly, center);
+            padding: 0 45px;
+            min-width: 220px;
+        }
+
+        row-gap: 30px;
+        column-gap: 30px;
+
+        img {
+            @media screen and (min-width: $layout-breakpoint-tablet) {
+                width: calc(100% / 3 - 50px);
+                border-radius: 16px;
+                object-fit: cover;
+
+                &:hover {
+                    transform: scale(1.1);
+                    transition: transform 0.3s ease;
+                }
+            }
+
+            width: 70%;
+            height: auto;
+            margin: 0 auto;
+        }
+    }
+}
+
+/*Map's section*/
+.location {
+    width: 100%;
+    height: auto;
+
+    h2 {
+        font-weight: 500;
+        padding-bottom: 60px;
+    }
+
+    .map {
+        width: 90%;
+        min-width: 320px;
+        height: auto;
+        overflow: hidden;
+        padding-bottom: 30px;
+        margin: 0 auto;
+
+        img {
+            width: 100%;
+            margin: 0 auto;
+        }
+    }
+
+    .first-location {
+        font-weight: 400;
+        font-size: 1.8rem;
+        line-height: 2rem;
+        color: #E86424;
+        padding-bottom: 30px;
+        margin: 0 30px;
+    }
+
+    .sub-location {
+        font-weight: 400;
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+        color: #E86424;
+        margin: 0 30px;
+        padding-bottom: 80px;
+    }
+}
+
+footer {
+    width: 100%;
+    min-width: 320px;
+    height: 280px;
+    background-color: $footer-color;
+    color: #fff;
+
+    h3 {
+        font-weight: 500;
+        font-size: 1.8rem;
+        line-height: 2rem;
+        padding: 20px 0 10px 20px;
+    }
+
+    ul {
+        list-style: none;
+        padding: 10px 0 10px 20px;
+
+        li {
+            font-weight: 300;
+            font-size: 1.4rem;
+            line-height: 1.8rem;
+            margin-bottom: 20px;
+        }
+    }
+
+    .social-media {
+        width: 100%;
+        min-width: 320px;
+        height: auto;
+        @include flexCenter(row, flex-start, center);
+
+        @media screen and (min-width: $layout-breakpoint-tablet) {
+            @include flexCenter(row, center, center)
+        }
+
+        padding-left: 20px;
+        column-gap: 20px;
+
+        .instagram-logo {
+            width: 30px;
+            height: 30px;
+            background-image: url("../assets/icon/instagram-logo.svg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .facebook-logo {
+            @extend .instagram-logo;
+
+            background-image: url("../assets/icon/facebook-logo.svg");
+
+        }
+
+        .twitter-logo {
+            @extend .instagram-logo;
+
+            background-image: url("../assets/icon/twitter-logo.svg");
+
+        }
+    }
+
+}
